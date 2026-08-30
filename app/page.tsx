@@ -1,3 +1,10 @@
+import { Button } from "@/app/components/ui/button";
+
 export default function Home() {
-  return <p>Hello world.</p>;
+  // const handleLogin = () => {};
+  return (
+    <div>
+      <Button>Login</Button>
+    </div>
+  );
 }
