@@ -1,14 +1,21 @@
-"use client"
-
+"use client";
+import { useEffect } from "react";
 import { Button } from "@/app/components/ui/button";
-import { backendApi } from "./config/axios";
+import { backendApi } from "./lib/api";
 
 export default function Home() {
+  useEffect(() => {
+    async function testApiCall() {
+      const response = await backendApi.get("/");
+      return response.data;
+    }
+    testApiCall();
+  }, []);
+
   const handleLogin = async (): Promise<void> => {
-    // const response = await backendApi.get("/auth/google");
-    window.location.replace('http://localhost:3001/api/v1/auth/google')
-    // console.log(response.data);
+    window.location.replace("http://localhost:3001/api/v1/auth/google");
   };
+
   return (
     <div>
       <Button onClick={handleLogin}>Login</Button>
