@@ -1,23 +1,18 @@
 "use client";
-import { useEffect } from "react";
-import { Button } from "@/app/components/ui/button";
-import { backendApi } from "./lib/api";
+import { Button } from "@/components/ui/button";
+// import Header from "@/app/components/Header";
+
+const GOOGLE_AUTH_URL = 'http://localhost:3001/api/v1/auth/google';
 
 export default function Home() {
-  useEffect(() => {
-    async function testApiCall() {
-      const response = await backendApi.get("/");
-      return response.data;
-    }
-    testApiCall();
-  }, []);
 
   const handleLogin = async (): Promise<void> => {
-    window.location.replace("http://localhost:3001/api/v1/auth/google");
+    window.location.replace(GOOGLE_AUTH_URL);
   };
 
   return (
     <div>
+      {/* <Header /> */}
       <Button onClick={handleLogin}>Login</Button>
     </div>
   );
