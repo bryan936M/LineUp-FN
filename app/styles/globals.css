@@ -5,6 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* cleared everything with the initial value, but I manually entered everything from the documentation table */
+  --breakpoint-*: initial;
+  /* can set the breakpoints you want to keep */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1380px; /* added your custom breakpoint here */
+  --breakpoint-2xl: 1536px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -122,6 +131,7 @@
     @apply border-border outline-ring/50;
   }
   body {
+    font-family: var(--font-velisse);
     @apply bg-background text-foreground;
   }
   html {
