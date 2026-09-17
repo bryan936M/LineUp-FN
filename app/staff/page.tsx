@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import Image from "next/image";
 
 // type Props = {};
 
@@ -18,10 +17,10 @@ const page = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-scissors"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-scissors"
                 aria-hidden="true"
               >
                 <circle cx="6" cy="6" r="3"></circle>

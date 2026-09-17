@@ -50,14 +50,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  console.log('Velisse Font: ', velisse)
   return (
     <html
       lang="en"
       // className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      className={`${velisse.variable}`}
+      className={`h-full ${velisse.variable}`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* // suppressHydrationWarning silences React hydration errors caused by browser extensions (grammarly) injecting attributes eg: data-new-gr-c-s-check-loaded="14.1024.0" data-gr-ext-installed="" */}
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
