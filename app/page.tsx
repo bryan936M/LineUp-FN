@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <div>
       {/* <Header /> */}
+      <h1 className="">Hello worlds!</h1>
       <Button onClick={handleLogin}>Login</Button>
     </div>
   );
