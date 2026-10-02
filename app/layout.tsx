@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
-import localFont from "next/font/local";
+import { boska } from "./font";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,36 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const velisse = localFont({
-  src: [
-    {
-      path: "../app/fonts/VelisseDisplay-Bold.woff",
-      style: "bold",
-      weight: "700",
-    },
-    {
-      path: "../app/fonts/VelisseDisplay-Medium.woff",
-      style: "medium",
-      weight: "500",
-    },
-    {
-      path: '../app/fonts/VelisseDisplay-Italic.woff',
-      style: 'italic',
-      weight: '400',
-    },
-    {
-      path: '../app/fonts/VelisseDisplay-Regular.woff',
-      style: 'normal',
-      weight: '400',
-    },
-    {
-      path: '../app/fonts/VelisseDisplay-Light.woff',
-      style: 'light',
-      weight: '300',
-    },
-  ],
-  variable: "--font-velisse",
-});
 
 export const metadata: Metadata = {
   title: "LineUp Queue",
@@ -53,11 +23,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      // className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      className={`h-full ${velisse.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${boska.variable} h-full antialiased`}
+      // {/* className={`h-full ${velisse.variable}`} */}
     >
       {/* // suppressHydrationWarning silences React hydration errors caused by browser extensions (grammarly) injecting attributes eg: data-new-gr-c-s-check-loaded="14.1024.0" data-gr-ext-installed="" */}
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full flex flex-col font-geist-sans font-geist-mono" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

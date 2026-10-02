@@ -34,7 +34,7 @@ const page = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg">LineUP</span>
-              <span className="text-sm text-gray-600 hidden lg:block">
+              <span className="text-xs text-gray-600 hidden md:block">
                 Queue, made simple.
               </span>
             </div>
